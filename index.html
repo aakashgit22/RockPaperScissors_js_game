@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock_Paper_Scissor</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="container">
+        <div class="heading">
+          <div class="name">
+            <h1>ROCK</h1>
+            <h1>PAPER</h1>
+            <h1>SCISSORS</h1>
+          </div>
+          <div class="computerScore">
+            <h4>COMPUTER</h4>
+            <h4>SCORE</h4>
+
+            <div class="cScore">
+              <h1>0</h1>
+            </div>
+          </div>
+          <div class="yourScore">
+            <h4>YOUR</h4>
+            <h4>SCORE</h4>
+
+            <div class="yScore">
+              <h1>0</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="game">
+        <button class="choice-btn" data-choice="paper">
+          <div class="choice Paper">
+            <img src="./images/icon-paper.png" alt="paper" />
+          </div>
+        </button>
+
+        <button class="choice-btn" data-choice="rock">
+          <div class="choice Rock">
+            <img src="./images/icon-rock.png" alt="rock" />
+          </div>
+        </button>
+
+        <button class="choice-btn" data-choice="scissors">
+          <div class="choice Scissors">
+            <img src="./images/icon-scissors.png" alt="scissors" />
+          </div>
+        </button>
+      </section>
+    </div>
+
+    <div id="openModalBtn" class="rules-but">
+      <span class="rules-text"> RULES </span>
+    </div>
+    <a href="./hurray.html"><button class="next">NEXT</button></a>
+    <!-- The modal -->
+    <div id="myModal" class="modal">
+      <!-- Close button (X) -->
+      <span class="close" id="closeModalBtn"></span>
+      <br />
+      <span class="rules-heading">Game Rules</span>
+      <ul  class="rules-list">
+        <br />
+        <li><img src="./images/Rectangle 5.png"/> beats scissors, scissors beat paper, and paper beats rock.</li>
+        <br />
+        <li><img src="./images/Rectangle 5.png"/> 
+          Agree ahead of time whether you’ll count off “rock, paper, scissors,
+          shoot” or just “rock, paper, scissors.”
+        </li>
+        <br />
+        <li><img src="./images/Rectangle 5.png"/> 
+          
+          Use rock, paper, scissors to settle minor decisions or simply play to
+          pass the time
+        </li>
+        <br />
+        <li><img src="./images/Rectangle 5.png"/> 
+          If both players lay down the same hand, each player lays down another
+          hand
+        </li>
+        <br />
+      </ul>
+    </div>
+
+    <section class="results hidden">
+      <h2 class="results__heading">you picked</h2>
+      <h2 class="results__heading">computer picked</h2>
+      <div class="results__result"></div>
+      <div class="results__winner hidden">
+        <h3 class="results__text"></h3>
+        <!-- <button class="play-again">play again</button> -->
+        <button class="playAgain" onclick="replay()">PLAY AGAIN</button>
+      </div>
+      <div class="results__result"></div>
+    </section>
+
+    
+    <script src="script.js"></script>
+  </body>
+</html>
