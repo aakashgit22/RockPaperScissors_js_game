@@ -14,7 +14,7 @@ function openModal() {
 // Function to close the modal
 function closeModal() {
   modal.style.display = 'none';
-  overlay.style.display = 'none';
+  // overlay.style.display = 'none';
 }
 
 // Event listener to open the modal when the button is clicked
@@ -60,11 +60,12 @@ let playAgainBtn=document.getElementsByClassName('playAgain')[0]
 const scoreNumber = document.querySelector(".score__number");
 let score = 0;
 
-
+// next button
+let nextBtn=document.getElementsByClassName('next')[0]
 
 // DISPLAY SCORE
-let computerScore=document.getElementsByClassName('cScoree')[0]
-let userScore=document.getElementsByClassName('Yscore')[0]
+let computerScore=document.getElementsByClassName('cScore')[0]
+let userScore=document.getElementsByClassName('yScore')[0]
 
 // Game Logic
 
@@ -88,7 +89,7 @@ function aiChoose() {
 }
 
 
-
+// ok
 function displayResults(results) {
   resultDivs.forEach((resultDiv, idx) => {
     setTimeout(() => {
@@ -103,7 +104,7 @@ function displayResults(results) {
   gameDiv.classList.toggle("hidden");
   resultsDiv.classList.toggle("hidden");
 }
-
+// ok
 function displayWinner(results) {
   setTimeout(() => {
     const userWins = isWinner(results);
@@ -112,29 +113,32 @@ function displayWinner(results) {
     if (userWins) {
       resultText.innerText = "you win";
       resultDivs[0].classList.toggle("winner");
-    //  document.getElementsByClassName("next").style.display='inline';
+      nextBtn.style.display='block'
+     
+   
       keepScore(1);
     } else if (aiWins) {
       resultText.innerText = "you lose";
       resultDivs[1].classList.toggle("winner");
-      // document.getElementsByClassName("next").style.display='none';
+    
       keepScore(-1);
     } else {
       resultText.innerText = "draw";
-      // document.getElementsByClassName("next").style.display='none';
+   
     }
     resultWinner.classList.toggle("hidden");
     resultsDiv.classList.toggle("show-winner");
   }, 1000);
 }
-
+// ok
 function isWinner(results) {
   return results[0].beats === results[1].name;
 }
 
 function keepScore(point) {
-  score += point;
-  scoreNumber.innerText = score;
+  // score += point;
+  // scoreNumber.innerText = score;
+
 }
 
 
